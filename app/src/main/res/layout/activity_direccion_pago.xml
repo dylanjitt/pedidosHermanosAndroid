@@ -18,12 +18,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:orientation="vertical"
+
         android:id="@+id/Direccion"
+
     >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="70dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -34,6 +36,8 @@
                 android:textColor="@color/white"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:textStyle="bold"
+                android:textSize="22.5sp"
                 />
 
             <androidx.cardview.widget.CardView
@@ -61,17 +65,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginStart="15dp"
             android:text="Escriba su direccion"
             android:id="@+id/OrdenDireccion"
-            android:textColor="@color/white"
+            android:textColor="#FDAF01"
+            android:textStyle="bold"
         />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:paddingLeft="10dp"
@@ -85,9 +90,9 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
         >
-            <View
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="15dp"
@@ -95,9 +100,79 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:background="@drawable/borde"
+                android:id="@+id/opcionesSucursales"
                 >
+                <androidx.cardview.widget.CardView
+                    android:layout_width="220dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginStart="10dp"
+                    app:cardCornerRadius="10dp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black"
+                        android:text="Miraflores"
+                        android:textColor="#FDAF01"
+                        android:textStyle="bold"
+                        android:paddingTop="5dp"
+                        android:paddingStart="10dp"
+                        tools:ignore="RtlSymmetry"
+                        />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginStart="10dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginEnd="15dp"
+                    >
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#FDAF01"
+                        />
+                </androidx.cardview.widget.CardView>
 
-            </View>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="10dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginEnd="15dp"
+                >
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FDAF01"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="380dp"
+                android:layout_height="185dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/opcionesSucursales"
+                app:cardCornerRadius="10dp"
+                >
+                <ImageView
+                    android:layout_width="380dp"
+                    android:layout_height="185dp"
+                    android:src="@drawable/pexels_map_two"
+                    />
+            </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 <!--        <ListView-->
@@ -119,6 +194,165 @@
         app:layout_constraintRight_toRightOf="parent"
         android:id="@+id/Pago"
     >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="#FDAF01"
+            android:id="@+id/barraSeparacion"
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/barraSeparacion"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:text="Pago"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="22.5sp"
+            android:id="@+id/tituloPago"
+        />
+
+<!--        pago a dar-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tituloPago"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="#FDAF01"
+            android:textStyle="bold"
+            android:text="Pago a dar"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="40dp"
+            android:id="@+id/tituloMontoPagar"
+            />
+
+        <EditText
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:id="@+id/pagoDar"
+            app:layout_constraintTop_toBottomOf="@id/tituloMontoPagar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@drawable/borde"
+            android:hint="0"
+            android:textStyle="bold"
+            android:textColorHint="@color/white"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/pagoDar"
+            app:layout_constraintTop_toBottomOf="@id/tituloMontoPagar"
+            android:text="Bs"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="5dp"
+            />
+
+<!--        total a pagar-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tituloPago"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textColor="#FDAF01"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="40dp"
+            android:text="Total a pagar"
+            />
+
+        <EditText
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:id="@+id/totalDar"
+            app:layout_constraintTop_toBottomOf="@id/tituloMontoPagar"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/borde"
+            android:hint="0"
+            android:textStyle="bold"
+            android:textColorHint="@color/white"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/pagoDar"
+            app:layout_constraintTop_toBottomOf="@id/tituloMontoPagar"
+            android:text="Bs"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="210dp"
+            />
+
+<!--        cambio recibir-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/pagoDar"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            android:layout_marginTop="10dp"
+            android:text="Cambio Esperado"
+            android:textColor="#FDAF01"
+            android:textStyle="bold"
+            android:layout_marginStart="40dp"
+            android:id="@+id/cambioEsperado"
+            />
+
+        <EditText
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/cambioEsperado"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@drawable/borde"
+            android:hint="0"
+            android:textStyle="bold"
+            android:textColorHint="@color/white"
+            android:id="@+id/cajaDatos"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/cajaDatos"
+            app:layout_constraintTop_toBottomOf="@id/cambioEsperado"
+            android:text="Bs"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="5dp"
+            />
+
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:backgroundTint="#FDAF01"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cambioEsperado"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="15dp"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
