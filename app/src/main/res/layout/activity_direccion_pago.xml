@@ -6,8 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Direccion_Pago"
-    android:background="#302C2C"
+    tools:context=".activity.Activity_Direccion_Pago"
+    android:background="#221919"
     >
 
 <!--    alto de la pantalla es 730dp-->
@@ -92,87 +92,93 @@
             android:layout_height="match_parent"
             android:layout_marginTop="15dp"
         >
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="100dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:background="@drawable/borde"
                 android:id="@+id/opcionesSucursales"
+                android:padding="10dp"
                 >
-                <androidx.cardview.widget.CardView
-                    android:layout_width="220dp"
-                    android:layout_height="30dp"
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_marginStart="10dp"
-                    app:cardCornerRadius="10dp"
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/black"
-                        android:text="Miraflores"
-                        android:textColor="#FDAF01"
-                        android:textStyle="bold"
-                        android:paddingTop="5dp"
-                        android:paddingStart="10dp"
-                        tools:ignore="RtlSymmetry"
+                    android:id="@+id/zonaOriginal">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="220dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:cardCornerRadius="10dp"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/black"
+                            android:textColor="#FDAF01"
+                            android:textStyle="bold"
+                            android:paddingTop="5dp"
+                            android:paddingStart="10dp"
+                            android:id="@+id/text_sucursal"
+                            android:text="Obrajes"
+                            tools:ignore="RtlSymmetry"
+                            />
+                    </androidx.cardview.widget.CardView>
+                    <ImageButton
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/confirmar"
+                        android:background="@drawable/borde_final"
+
+                        android:id="@+id/selecting_zone"
                         />
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_marginStart="10dp"
-                    app:cardCornerRadius="10dp"
-                    android:layout_marginEnd="15dp"
-                    >
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#FDAF01"
-                        />
-                </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/zona_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.cardview.widget.CardView
+            <ImageButton
+                android:id="@+id/editing_zone"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="10dp"
-                app:cardCornerRadius="10dp"
                 android:layout_marginEnd="15dp"
-                >
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#FDAF01"
-                    />
-            </androidx.cardview.widget.CardView>
+                android:src="@drawable/editar_dos"
+                android:background="@drawable/borde_final"
+                />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="380dp"
-                android:layout_height="185dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/opcionesSucursales"
-                app:cardCornerRadius="10dp"
-                >
-                <ImageView
-                    android:layout_width="380dp"
-                    android:layout_height="185dp"
-                    android:src="@drawable/pexels_map_two"
-                    />
-            </androidx.cardview.widget.CardView>
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="380dp"-->
+<!--                android:layout_height="185dp"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:cardCornerRadius="10dp"-->
+<!--                android:layout_marginBottom="25dp"-->
+<!--                >-->
+<!--                <ImageView-->
+<!--                    android:layout_width="380dp"-->
+<!--                    android:layout_height="185dp"-->
+<!--                    android:src="@drawable/pexels_map_two"-->
+<!--                    />-->
+<!--            </androidx.cardview.widget.CardView>-->
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 <!--        <ListView-->
@@ -344,14 +350,15 @@
             android:layout_marginStart="5dp"
             />
 
-        <Button
+        <ImageButton
             android:layout_width="140dp"
             android:layout_height="40dp"
-            android:backgroundTint="#FDAF01"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cambioEsperado"
             android:layout_marginEnd="50dp"
             android:layout_marginTop="15dp"
+            android:src="@drawable/continuar"
+            android:background="@drawable/borde_dos_amarillo"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
