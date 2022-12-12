@@ -51,7 +51,6 @@ dependencies {
 
     //Shared Preferences
     implementation 'androidx.preference:preference-ktx:1.2.0'
-    implementation 'androidx.lifecycle:lifecycle-livemodel-ktx:2.5.1'
 
     //Gson
     implementation 'com.google.code.gson:gson:2.8.9'
