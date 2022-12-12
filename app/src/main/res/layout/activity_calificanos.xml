@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0E0C01"
+    tools:context=".Calificanos">
+
+    <ImageView
+        android:id="@+id/good_id"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/good"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
+        android:textColor="#DCB933"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Se envio el pedido de manera exitosa!!"
+        app:layout_constraintTop_toBottomOf="@+id/good_id"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/star3"
+        android:scaleType="centerInside"
+        android:background="@color/black"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_id"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:src="@drawable/star_view"
+        app:layout_constraintRight_toRightOf="parent">
+    </ImageButton>
+
+    <ImageButton
+        android:id="@+id/star1"
+        android:scaleType="centerInside"
+        android:background="@color/black"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_id"
+        app:layout_constraintRight_toLeftOf="@id/star2"
+        android:src="@drawable/star_view">
+    </ImageButton>
+
+    <ImageButton
+        android:id="@+id/star2"
+        android:scaleType="centerInside"
+        android:background="@color/black"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_id"
+        app:layout_constraintRight_toLeftOf="@id/star3"
+        android:src="@drawable/star_view">
+    </ImageButton>
+
+    <ImageButton
+        android:id="@+id/star4"
+        android:scaleType="centerInside"
+        android:background="@color/black"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_id"
+        app:layout_constraintLeft_toRightOf="@id/star3"
+        android:src="@drawable/star_view">
+    </ImageButton>
+
+    <ImageButton
+        android:id="@+id/star5"
+        android:scaleType="centerInside"
+        android:background="@color/black"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_id"
+        app:layout_constraintLeft_toRightOf="@id/star4"
+        android:src="@drawable/star_view">
+    </ImageButton>
+
+    <TextView
+        android:id="@+id/text_id_ty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:textColor="#E3A435"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Cuantas estrellas le pone a nuestro servicio?"
+        android:padding="3sp"
+        app:layout_constraintTop_toBottomOf="@+id/star3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    </TextView>
+
+    <TextView
+        android:id="@+id/text_id_tyty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:textColor="#DCB933"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Gracias por confiar en pedidos hermanos."
+        android:padding="3sp"
+        app:layout_constraintTop_toBottomOf="@+id/text_id_ty"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    </TextView>
+
+    <TextView
+        android:id="@+id/text_id_tytyty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"
+        android:textColor="#DCB933"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Quiere hacer un nuevo pedido?"
+        android:padding="3sp"
+        app:layout_constraintTop_toBottomOf="@+id/text_id_tyty"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    </TextView>
+
+    <Button
+        android:id="@+id/yes_button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="25dp"
+        android:text="Si"
+        android:backgroundTint="#DCB933">
+    </Button>
+
+    <Button
+        android:id="@+id/no_buttom"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="25dp"
+        android:text="No"
+        android:backgroundTint="#DCB933">
+    </Button>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

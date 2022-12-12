@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".Pedido"
     android:layout_gravity="center">
 
@@ -13,23 +15,25 @@
         android:layout_height="wrap_content"
         android:text="Tiempo de Entrega."
         android:textSize="30sp"
-        android:textColor="#E1C34D"
+        android:textColor="@color/yellow"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="35dp">
     </TextView>
 
-    <ImageView
-        android:id="@+id/crono_view"
-        android:layout_width="1.5in"
-        android:layout_height="1.5in"
-        android:background="#DD2323"
-        app:layout_constraintTop_toBottomOf="@+id/delivery_view"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Cronometro"
+        android:textColor="@color/yellow"
+        android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="28dp">
-    </ImageView>
+        app:layout_constraintTop_toBottomOf="@+id/delivery_view"/>
 
     <TextView
         android:id="@+id/thing_view"
@@ -38,9 +42,9 @@
         android:text="Nuestra prioridad es facilitarle a nuestros clientes la opcion de realizar pedidos desde la comodidad de su hogar."
         android:padding="12sp"
         android:gravity="center"
-        android:textColor="#E8D589"
+        android:textColor="@color/yellow"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/crono_view"
+        app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent">
     </TextView>
@@ -49,17 +53,10 @@
         android:id="@+id/deliveyvehicle_view"
         android:layout_width="1.9in"
         android:layout_height="1.43in"
-        android:background="#455FEF"
+        android:src="@drawable/delivery_view"
         app:layout_constraintTop_toBottomOf="@+id/thing_view"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="10dp">
     </ImageView>
-
-
-
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
