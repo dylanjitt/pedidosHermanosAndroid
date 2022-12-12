@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AAFT</string>
+    <string name="app_name">Pedidos Hermanos</string>
     <string-array name="types">
         <item>Mobile</item>
         <item>Office</item>
