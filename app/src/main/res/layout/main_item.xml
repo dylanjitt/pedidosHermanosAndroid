@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="@id/bg_chocolate">
 
         <ImageView
-
+            android:id="@+id/comida"
             android:layout_width="105dp"
             android:layout_height="80dp"
             android:layout_margin="0dp"
@@ -80,6 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
         android:text="1"
+        android:visibility="gone"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -95,6 +96,7 @@
         android:layout_margin="0dp"
         android:background="@color/chocolate"
         android:src="@drawable/rem_food"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/bg_chocolate"
         app:layout_constraintEnd_toStartOf="@id/quantity_food"
         app:layout_constraintStart_toEndOf="@id/guideline2"
