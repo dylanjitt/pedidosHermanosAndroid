@@ -7,6 +7,7 @@ import android.os.CountDownTimer
 import com.grupof.aaft.databinding.ActivityPedidoBinding
 
 class Pedido : AppCompatActivity() {
+    private var hola = true
 
     private lateinit var binding: ActivityPedidoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,21 +16,31 @@ class Pedido : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
         object : CountDownTimer(3600, 1000) {
-                override fun onTick(millisUntilFinished: Long) {
-                    val minute = (millisUntilFinished / 1000) / 60
-                    val seconds = seconds(millisUntilFinished)
-                    binding.textView.text = "$minute:$seconds"
-                }
-                override fun onFinish() {
+            override fun onTick(millisUntilFinished: Long) {
+                val minute = (millisUntilFinished / 1000) / 60
+                val seconds = seconds(millisUntilFinished)
+                binding.textView.text = "$minute:$seconds"
+            }
+            override fun onFinish() {
+                if(hola) {
                     next()
                 }
+            }
+
         }.start()
+
+        binding.sillegaAntes.setOnClickListener{
+            next()
+        }
     }
 
     fun next(){
         val intent = Intent(this, Calificanos::class.java)
         startActivity(intent)
+        finish()
+        hola = false
     }
 
     fun seconds(millisUntilFinished: Long): String {
