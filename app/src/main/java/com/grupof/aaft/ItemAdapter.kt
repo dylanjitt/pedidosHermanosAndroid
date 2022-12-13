@@ -25,6 +25,8 @@ class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.binding(foodItems[position])
+
+        
     }
 
     override fun getItemCount(): Int = foodItems.size
