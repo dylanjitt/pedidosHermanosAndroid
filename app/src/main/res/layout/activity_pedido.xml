@@ -24,10 +24,11 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Cronometro"
+        android:layout_marginTop="50dp"
         android:textColor="@color/yellow"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -41,10 +42,11 @@
         android:layout_height="wrap_content"
         android:text="Nuestra prioridad es facilitarle a nuestros clientes la opcion de realizar pedidos desde la comodidad de su hogar."
         android:padding="12sp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:textColor="@color/yellow"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/sillega_antes"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent">
     </TextView>
@@ -59,4 +61,17 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="10dp">
     </ImageView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sillega_antes"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:backgroundTint="@color/brown"
+        android:text="Si su pedido llega antes, presiones este boton."
+        android:textColor="@color/yellow">
+    </Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
