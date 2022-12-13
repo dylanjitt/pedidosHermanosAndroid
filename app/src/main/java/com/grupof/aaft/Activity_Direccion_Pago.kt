@@ -1,23 +1,13 @@
-package com.grupof.aaft.activity
+package com.grupof.aaft
 
-import android.content.Context
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.View.inflate
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.core.view.isGone
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.grupof.aaft.Pedido
-import com.grupof.aaft.R
 import com.grupof.aaft.databinding.ActivityDireccionPagoBinding
 
 class Activity_Direccion_Pago : AppCompatActivity() {

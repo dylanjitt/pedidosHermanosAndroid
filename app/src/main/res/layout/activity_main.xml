@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity"
+    tools:context=".MainActivity"
     android:background="@color/brown"
     >
 
@@ -138,20 +138,58 @@
             android:textStyle="bold">
         </TextView>
 
-
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/menu"
-        app:layout_constraintTop_toBottomOf="@id/topSection"
-        app:layout_constraintBottom_toTopOf="@id/BottomSection">
+        app:layout_constraintBottom_toTopOf="@id/BottomSection"
+        app:layout_constraintTop_toBottomOf="@id/topSection">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textoMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:text="Menu"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/yellow"
+                android:paddingLeft="20dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/main_item" />
+
+            <TextView
+                android:id="@+id/textoBebidas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:text="Bebidas"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/yellow"
+                android:paddingLeft="20dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bebidas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/main_item" />
+
+        </LinearLayout>
 
 
-    </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

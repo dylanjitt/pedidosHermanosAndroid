@@ -1,11 +1,8 @@
-package com.grupof.aaft.activity
+package com.grupof.aaft
 
-import android.content.DialogInterface.OnClickListener
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.grupof.aaft.R
 
 class ZonaSucursalAdapter(val zonasLista:List<Zonas>,
                           private val onClickListener:(Int) -> Unit):

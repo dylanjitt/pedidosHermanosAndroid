@@ -13,7 +13,15 @@
         android:theme="@style/Theme.AAFT"
         tools:targetApi="31">
         <activity
-            android:name=".activity.Activity_Direccion_Pago"
+            android:name=".ConfirmPedido"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity_Direccion_Pago"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,13 +40,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".google"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".Calificanos"
             android:exported="false">
             <meta-data
@@ -46,7 +47,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".MainActivity"
 
             android:exported="true">
             <meta-data

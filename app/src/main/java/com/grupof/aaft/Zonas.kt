@@ -1,4 +1,4 @@
-package com.grupof.aaft.activity
+package com.grupof.aaft
 
 data class Zonas(
         var identificacion:Int,
