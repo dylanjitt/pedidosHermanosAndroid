@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        binding.cambioAhora.setOnClickListener(){
+        binding.ButtonPedir.setOnClickListener(){
             val intentoDos = Intent(this,Activity_Direccion_Pago::class.java)
             startActivity(intentoDos)
         }

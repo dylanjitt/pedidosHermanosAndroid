@@ -14,7 +14,7 @@ class ZonaSucursalHolder(view:View): RecyclerView.ViewHolder(view) {
 
     @SuppressLint("SetTextI18n")
     fun render(zonasDisponibles: Zonas,onClickListener:(Int) -> Unit){
-        binding.textSucursal.text = zonasDisponibles.nombreZona
+        binding.selectingZone.text = zonasDisponibles.nombreZona
 //        binding2.selectingZone.setOnClickListener{
 //
 //        }

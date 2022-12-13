@@ -1,6 +1,7 @@
 package com.grupof.aaft.activity
 
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,7 +14,9 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.view.isGone
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.grupof.aaft.Pedido
 import com.grupof.aaft.R
 import com.grupof.aaft.databinding.ActivityDireccionPagoBinding
 
@@ -39,18 +42,49 @@ class Activity_Direccion_Pago : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         binding.zonaRecycler.visibility = View.GONE
+        binding.fondoOpcionesZonas.visibility = View.GONE
         iniciarRecyclerView()
 
         binding.editingZone.setOnClickListener(){
             if(binding.zonaRecycler.visibility == View.GONE){
                 binding.zonaRecycler.visibility = View.VISIBLE
+                binding.fondoOpcionesZonas.visibility = View.VISIBLE
                 binding.zonaOriginal.visibility = View.GONE
             }else{
                 binding.zonaRecycler.visibility = View.GONE
+                binding.fondoOpcionesZonas.visibility = View.GONE
                 binding.zonaOriginal.visibility = View.VISIBLE
             }
         }
 
+        binding.pagoDar.addTextChangedListener {
+            if(!binding.pagoDar.text.isEmpty()){
+                if(binding.pagoDar.text.toString().toInt()>0 &&
+                    !binding.pagoDar.text.isEmpty() &&
+                    binding.pagoDar.text.toString().toInt() >= binding.totalDar.text.toString().toInt()){
+                    binding.cajaDatos.text = (binding.pagoDar.text.toString().toInt()-binding.totalDar.text.toString().toInt()).toString()
+                }else{
+                    binding.cajaDatos.text = "0"
+                }
+            }
+        }
+
+        binding.goNext.setOnClickListener{
+            if(binding.IntroduccionDatos.text.isEmpty()){
+                Toast.makeText(this, "Direccion no agregada",
+                    Toast.LENGTH_SHORT).show()
+            }else if(binding.pagoDar.text.isEmpty()){
+                Toast.makeText(this, "Cantidad de dinero insuficiente",
+                    Toast.LENGTH_SHORT).show()
+            }else if(binding.pagoDar.text.toString().toInt() <
+                binding.totalDar.text.toString().toInt()){
+                Toast.makeText(this, "Cantidad de dinero insuficiente",
+                    Toast.LENGTH_SHORT).show()
+            }else{
+                val cambioAhora = Intent(this,Pedido::class.java)
+                startActivity(cambioAhora)
+            }
+        }
     }
 
     fun iniciarRecyclerView(){
@@ -62,8 +96,9 @@ class Activity_Direccion_Pago : AppCompatActivity() {
 
     fun zonaSeleccionada(identificador: Int){
 //        Toast.makeText(this,zonasDisponibles[identificador].nombreZona, Toast.LENGTH_SHORT).show()
-        binding.textSucursal.text = zonasDisponibles[identificador].nombreZona
+        binding.selectingZone.text = zonasDisponibles[identificador].nombreZona
         binding.zonaRecycler.visibility = View.GONE
+        binding.fondoOpcionesZonas.visibility = View.GONE
         binding.zonaOriginal.visibility = View.VISIBLE
     }
 }
