@@ -93,7 +93,6 @@
             android:layout_height="match_parent"
             android:layout_marginTop="15dp"
         >
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
@@ -107,7 +106,6 @@
                 android:clipToPadding="false"
                 android:elevation="10dp"
                 />
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -159,6 +157,7 @@
 <!--                            tools:ignore="RtlSymmetry"-->
 <!--                            />-->
                     </androidx.cardview.widget.CardView>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -201,19 +200,7 @@
                     android:scaleType="centerCrop"
                     />
             </androidx.cardview.widget.CardView>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--        <ListView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="100dp">-->
-<!--            -->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent">-->
-
-<!--            </TextView>-->
-<!--        </ListView>-->
 
     </LinearLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
