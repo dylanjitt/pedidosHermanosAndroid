@@ -16,6 +16,10 @@ class Activity_Direccion_Pago : AppCompatActivity() {
 
     private lateinit var binding: ActivityDireccionPagoBinding
 
+    companion object{
+        val MontoTotal: String = "0"
+    }
+
     var zonasDisponibles: List<Zonas> = listOf(
         Zonas(0,"Miraflores"),
         Zonas(1,"Irpavi"),
@@ -31,6 +35,9 @@ class Activity_Direccion_Pago : AppCompatActivity() {
         binding = ActivityDireccionPagoBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        binding.totalDar.text = intent.getStringExtra(MontoTotal).orEmpty()
+
         binding.zonaRecycler.visibility = View.GONE
         binding.fondoOpcionesZonas.visibility = View.GONE
         iniciarRecyclerView()

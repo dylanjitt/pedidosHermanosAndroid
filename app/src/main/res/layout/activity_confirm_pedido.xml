@@ -70,20 +70,21 @@
         <Button
             android:id="@+id/ButtonPedir"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="1dp"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:backgroundTint="@color/black"
             android:text="Confirmar Pedido"
             android:textAllCaps="false"
-            android:textSize="35dp"
+            android:textSize="32dp"
             android:gravity="center"
             android:textColor="@color/yellow"
             android:textStyle="bold"
             android:letterSpacing="0"
-            android:paddingBottom="1dp"
+            android:paddingBottom="10dp"
             >
         </Button>
 
