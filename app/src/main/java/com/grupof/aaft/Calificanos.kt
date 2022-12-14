@@ -1,5 +1,6 @@
 package com.grupof.aaft
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -15,7 +16,9 @@ class Calificanos : AppCompatActivity() {
         setContentView(view)
 
         binding.yesButton.setOnClickListener {
-            // TODO: LLevar a la activity de pedir cosas
+            val intentRedirect = Intent(this, MainActivity::class.java)
+            startActivity(intentRedirect)
+            finish()
         }
 
         binding.noButtom.setOnClickListener {

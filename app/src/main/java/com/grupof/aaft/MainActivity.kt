@@ -1,5 +1,7 @@
 package com.grupof.aaft
 
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,12 +42,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setRecyclerView()
-
-
-        itemBinding.anadirFood.setOnClickListener(){
-            comidaList
-
+        binding.ButtonPedir.setOnClickListener{
+            val intentRedirect = Intent(this, Activity_Direccion_Pago::class.java)
+            startActivity(intentRedirect)
+            finish()
         }
+
+
+//        itemBinding.anadirFood.setOnClickListener(){
+//            comidaList
+//
+//        }
     }
 
     private fun setRecyclerView() {
@@ -65,9 +72,7 @@ class MainActivity : AppCompatActivity() {
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = drinkAdapter
         }
-
     }
-
 
 
 

@@ -79,9 +79,8 @@ class Activity_Direccion_Pago : AppCompatActivity() {
 
     fun iniciarRecyclerView(){
         binding.zonaRecycler.layoutManager = LinearLayoutManager(this)
-        binding.zonaRecycler.adapter = ZonaSucursalAdapter(zonasDisponibles) {
-            llave -> zonaSeleccionada(llave)
-        }
+        binding.zonaRecycler.adapter = ZonaSucursalAdapter(zonasDisponibles
+        ,{ llave -> zonaSeleccionada(llave) })
     }
 
     fun zonaSeleccionada(identificador: Int){

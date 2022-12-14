@@ -1,57 +1,43 @@
 package com.grupof.aaft
 
 import android.content.Intent
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.grupof.aaft.databinding.ActivityCreateUserBinding
 import com.grupof.aaft.databinding.ActivityLoginBinding
 
-class Login : AppCompatActivity() {
+class CreateUser : AppCompatActivity() {
 
-    private lateinit var binding:ActivityLoginBinding
+    private lateinit var binding: ActivityCreateUserBinding
     private lateinit var auth: FirebaseAuth
     var currentUser: FirebaseUser? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivityCreateUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        iniciarUiLogin()
+        agregarUsuario()
     }
 
-    private fun iniciarUiLogin() {
+    private fun agregarUsuario(){
         auth = FirebaseAuth.getInstance()
         currentUser = auth.currentUser
-
-        binding.run {
-            inicarSesion.setOnClickListener {
+        binding.run{
+            botonConfirmar.setOnClickListener{
                 val email = email.text.toString()
                 val password = password.text.toString()
                 if (validateData(email, password)){
-                    loginUser(email, password)
-                }else{
-                    showMessage("Usuario o contraseña incorrectos")
+                    createNewUser(email, password)
+                    redirectActivity()
                 }
-
             }
-            createAccount.setOnClickListener {
-                redirectCreateActivity()
+            botonCancelar.setOnClickListener{
+                redirectActivity()
             }
         }
-    }
-
-    private fun loginUser(email:String,password:String){
-        auth.signInWithEmailAndPassword(email,password)
-            .addOnCompleteListener(){ task ->
-                if(task.isSuccessful){
-                    redirectActivity()
-                }else{
-                    showMessage("Usuario o Contraseña incorrectos")
-                }
-            }
     }
 
     private fun validateData(email: String, password: String): Boolean {
@@ -72,19 +58,25 @@ class Login : AppCompatActivity() {
         return valid
     }
 
+    private fun createNewUser(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    showMessage("Nuevo usuario Creado")
+                } else {
+                    showMessage("Algo salió mal, intente nuevamente")
+                }
+            }
+    }
+
     private fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun redirectCreateActivity(){
-        val intentRedirect = Intent(this, CreateUser::class.java)
-        startActivity(intentRedirect)
-    }
-
     private fun redirectActivity() {
-        val intentRedirect = Intent(this, MainActivity::class.java)
+        val intentRedirect = Intent(this, Login::class.java)
         startActivity(intentRedirect)
-//        quita el activity de la pila:
         finish()
     }
+
 }
