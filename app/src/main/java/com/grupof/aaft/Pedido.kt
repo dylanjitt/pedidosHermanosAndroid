@@ -7,15 +7,14 @@ import android.os.CountDownTimer
 import com.grupof.aaft.databinding.ActivityPedidoBinding
 
 class Pedido : AppCompatActivity() {
-    private var hola = true
 
+    private var activitichange = true
     private lateinit var binding: ActivityPedidoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPedidoBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
 
         object : CountDownTimer(3600, 1000) {
             override fun onTick(millisUntilFinished: Long) {
@@ -24,9 +23,8 @@ class Pedido : AppCompatActivity() {
                 binding.textView.text = "$minute:$seconds"
             }
             override fun onFinish() {
-                if(hola) {
+                if(activitichange)
                     next()
-                }
             }
 
         }.start()
@@ -40,7 +38,7 @@ class Pedido : AppCompatActivity() {
         val intent = Intent(this, Calificanos::class.java)
         startActivity(intent)
         finish()
-        hola = false
+        activitichange = false
     }
 
     fun seconds(millisUntilFinished: Long): String {
