@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/brown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/littlecircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle_white"
+        app:layout_constraintTop_toTopOf="@id/bg"
+        app:layout_constraintBottom_toBottomOf="@id/bg"
+        app:layout_constraintStart_toStartOf="@id/bg"
+        android:paddingLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/cantidadFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textColor="@color/brown"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        app:layout_constraintTop_toTopOf="@id/littlecircle"
+        app:layout_constraintBottom_toBottomOf="@id/littlecircle"
+        app:layout_constraintEnd_toEndOf="@id/littlecircle"
+        app:layout_constraintStart_toStartOf="@id/littlecircle"
+        android:paddingLeft="5dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imageFoodFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintTop_toTopOf="@id/bg"
+        app:layout_constraintBottom_toBottomOf="@id/bg"
+        app:layout_constraintStart_toEndOf="@id/littlecircle">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:src="@drawable/pizza"
+            android:scaleType="centerCrop"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/nameItemFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pizza"
+        android:textColor="@color/yellow"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/bg"
+        app:layout_constraintStart_toEndOf="@id/imageFoodFinal"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/precioItemFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="40 Bs."
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/nameItemFinal"
+        app:layout_constraintStart_toEndOf="@id/imageFoodFinal"
+        android:layout_margin="0dp"
+        android:paddingLeft="10dp"/>
+
+    <ImageButton
+        android:id="@+id/deleteSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_delete_24"
+        android:background="@color/brown"
+        app:layout_constraintTop_toTopOf="@id/bg"
+        app:layout_constraintBottom_toBottomOf="@id/bg"
+        app:layout_constraintEnd_toEndOf="@id/bg"
+        android:paddingRight="10dp"/>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,14 +4,18 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.grupof.aaft.databinding.ActivityMainBinding
 import com.grupof.aaft.databinding.MainItemBinding
 
 class MainActivity : AppCompatActivity() {
 
-    var total: Int? = null
-    var cont: Int = 0
+    var total: Int = 0
+
+    companion object{
+        val MontoTotal: String = "0"
+    }
 
     val comidaList = mutableListOf<FoodItem>(
         FoodItem(R.drawable.hamburguesa,"Hamburguesa",25,false,0),
@@ -30,8 +34,12 @@ class MainActivity : AppCompatActivity() {
 
     )
 
+
+
+    val FoodList = mutableListOf<MutableList<FoodItem>>(comidaList,bebidasList)
+
     private lateinit var binding: ActivityMainBinding
-    private lateinit var itemBinding: MainItemBinding
+
 
     private val drinkAdapter by lazy { ItemAdapter() }
     private val foodAdapter by lazy { ItemAdapter() }
@@ -43,16 +51,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setRecyclerView()
         binding.ButtonPedir.setOnClickListener{
-            val intentRedirect = Intent(this, Activity_Direccion_Pago::class.java)
-            startActivity(intentRedirect)
-            finish()
+            if(total!=0){
+                val intentRedirect = Intent(this, Activity_Direccion_Pago::class.java)
+                intentRedirect.apply {
+                    putExtra(MontoTotal,total.toString())
+                }
+                startActivity(intentRedirect)
+                finish()
+            }else{
+                Toast.makeText(this, "Debe pedir al menos un producto", Toast.LENGTH_SHORT).show()
+            }
         }
 
 
 //        itemBinding.anadirFood.setOnClickListener(){
 //            comidaList
-//
-//        }
+
     }
 
     private fun setRecyclerView() {
@@ -61,18 +75,37 @@ class MainActivity : AppCompatActivity() {
 
         drinkAdapter.addPresentationCards(bebidasList)
 
+
+
+
         binding.menu.apply {
             layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = foodAdapter
+
         }
 
         binding.bebidas.apply {
             layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = drinkAdapter
+
         }
     }
+
+    fun upadteTotal(monto: Int){
+               total += monto
+        println(total)
+               binding.total.text = "Total: $total"
+    }
+
+    fun downgradeTotal(monto: Int){
+        total -= monto
+        println(total)
+        binding.total.text = "Total: $total"
+    }
+
+
 
 
 
