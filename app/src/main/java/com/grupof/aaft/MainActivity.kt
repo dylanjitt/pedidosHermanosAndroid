@@ -38,11 +38,13 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var temporalArrayList: ArrayList<FoodItem>
 
-    val FoodList = mutableListOf<MutableList<FoodItem>>(comidaList,bebidasList)
+    val FoodList = mutableListOf<FoodItem>()
+
+
 
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var searchView: SearchView
+    //private lateinit var searchView: SearchView
 
 
     private val drinkAdapter by lazy { ItemAdapter() }
@@ -58,25 +60,21 @@ class MainActivity : AppCompatActivity() {
         setSearchWord()
         setDefault()
 
-        searchView = findViewById(R.id.busqueda)
-        searchView.clearFocus()
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
-            override fun onQueryTextChange(newText: String): Boolean{
-                filterList(newText)
-                return true
-            }
-            override fun onQueryTextSubmit(query: String): Boolean{
-                return false
-            }
+        //searchView = findViewById(R.id.busqueda)
+        //searchView.clearFocus()
+        //searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
-        })
+        ///    override fun onQueryTextChange(newText: String): Boolean{
+        //        filterList(newText)
+        //        return true
+        //    }
+        //    override fun onQueryTextSubmit(query: String): Boolean{
+        //        return false
+        //    }
 
-        //temporalArrayList = arrayListOf<FoodItem>()
-//        itemBinding.anadirFood.setOnClickListener(){
-//
-//
-//        }
+        //})
+
     }
 
 
@@ -120,21 +118,7 @@ class MainActivity : AppCompatActivity() {
         binding.deleteWord.visibility = View.VISIBLE
         binding.searchLayout.visibility = View.VISIBLE
         binding.menuLayout.visibility = View.GONE
-
-
-
-        //if(filteredList.isEmpty()){
-        //    Toast.makeText(this,"Elemento no encontrado",Toast.LENGTH_SHORT).show()
-       // }else{
-
-            //foodAdapter.notifyDataSetChanged()
-            //drinkAdapter.notifyDataSetChanged()
-
-
-       // }
     }
-
-
 
     private fun setRecyclerView() {
 
@@ -143,10 +127,6 @@ class MainActivity : AppCompatActivity() {
         drinkAdapter.addPresentationCards(bebidasList)
 
         searchAdapter.addPresentationCards(filteredList)
-
-
-
-
         binding.menu.apply {
             layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
@@ -181,12 +161,5 @@ class MainActivity : AppCompatActivity() {
         println(total)
         binding.total.text = "Total: $total"
     }
-
-
-
-
-
-
-
 
 }

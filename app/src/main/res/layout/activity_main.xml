@@ -35,22 +35,8 @@
             android:src="@drawable/pedidos_hermanos_logo"
             app:layout_constraintEnd_toEndOf="@id/topSection"
             app:layout_constraintTop_toTopOf="@id/topSection"
-            app:layout_constraintBottom_toTopOf="@id/busqueda"
+            app:layout_constraintBottom_toTopOf="@id/busquedaa"
             android:layout_margin="15dp"/>
-
-
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvsearch"
-            android:visibility="gone"
-            android:layout_width="335dp"
-            android:layout_height="40dp"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="5dp"
-            app:layout_constraintBottom_toBottomOf="@id/topSection"
-            app:layout_constraintTop_toBottomOf="@id/bienvenido">
-        </androidx.cardview.widget.CardView>
 
             <EditText
                 android:id="@+id/busquedaa"
@@ -65,10 +51,6 @@
                 android:textColorHint="@color/soft_white"
                 android:textColor="@color/white"/>
 
-
-
-
-
         <ImageButton
             android:visibility="gone"
             android:id="@+id/deleteWord"
@@ -81,38 +63,16 @@
             app:layout_constraintTop_toTopOf="@id/busquedaa"
             app:layout_constraintBottom_toBottomOf="@id/busquedaa"/>
 
-
-
-        <androidx.appcompat.widget.SearchView
-            android:visibility="gone"
-            android:id="@+id/busqueda"
-            android:layout_width="330dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            app:layout_constraintBottom_toBottomOf="@id/topSection"
-            app:layout_constraintTop_toBottomOf="@id/bienvenido"
-            app:layout_constraintStart_toEndOf="@id/botonBuscar"
-            android:background="@color/white"
-            app:searchIcon="@color/nulll"
-            app:queryHint="Busca un producto"
-            android:outlineAmbientShadowColor="@color/soft_white"
-            android:outlineSpotShadowColor="@color/soft_white"
-            android:hint="Busca un producto"
-            android:textColorHint="@color/soft_white"/>
-        <!--app:queryBackground="@drawable/search_black_card"-->
-
-
         <ImageButton
             android:id="@+id/botonBuscar"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
             android:background="@drawable/yellow_circle"
-            app:layout_constraintBottom_toBottomOf="@id/busqueda"
-            app:layout_constraintRight_toLeftOf="@id/busqueda"
-            app:layout_constraintEnd_toStartOf="@+id/busqueda"
+            app:layout_constraintBottom_toBottomOf="@id/busquedaa"
             app:layout_constraintStart_toEndOf="@id/busquedaa"
-            app:layout_constraintTop_toTopOf="@id/busqueda"/>
+            app:layout_constraintTop_toTopOf="@id/busquedaa"
+            />
 
         <ImageView
             android:layout_width="wrap_content"
