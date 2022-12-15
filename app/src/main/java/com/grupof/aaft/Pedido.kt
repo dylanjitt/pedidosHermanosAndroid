@@ -26,19 +26,10 @@ class Pedido : AppCompatActivity() {
                 if(activitichange)
                     next()
             }
-
         }.start()
-
         binding.sillegaAntes.setOnClickListener{
             next()
         }
-    }
-
-    fun next(){
-        val intent = Intent(this, Calificanos::class.java)
-        startActivity(intent)
-        finish()
-        activitichange = false
     }
 
     fun seconds(millisUntilFinished: Long): String {
@@ -47,5 +38,12 @@ class Pedido : AppCompatActivity() {
         } else {
             "${(millisUntilFinished / 1000) % 60}"
         }
+    }
+
+    fun next(){
+        val intent = Intent(this, Calificanos::class.java)
+        startActivity(intent)
+        finish()
+        activitichange = false
     }
  }
