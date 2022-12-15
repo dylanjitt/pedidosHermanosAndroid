@@ -29,7 +29,6 @@
         <activity
             android:name=".Activity_Direccion_Pago"
             android:exported="true">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -59,6 +58,7 @@
         <activity
             android:name=".Login"
             android:exported="true">
+<!--            start here-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

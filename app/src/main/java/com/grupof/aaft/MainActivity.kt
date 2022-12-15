@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.grupof.aaft.databinding.ActivityMainBinding
 import com.grupof.aaft.databinding.MainItemBinding
@@ -50,12 +51,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setRecyclerView()
         binding.ButtonPedir.setOnClickListener{
-            val intentRedirect = Intent(this, Activity_Direccion_Pago::class.java)
-            intentRedirect.apply {
-                putExtra(MontoTotal,total.toString())
+            if(total!=0){
+                val intentRedirect = Intent(this, Activity_Direccion_Pago::class.java)
+                intentRedirect.apply {
+                    putExtra(MontoTotal,total.toString())
+                }
+                startActivity(intentRedirect)
+                finish()
+            }else{
+                Toast.makeText(this, "Debe pedir al menos un producto", Toast.LENGTH_SHORT).show()
             }
-            startActivity(intentRedirect)
-            finish()
         }
 
 

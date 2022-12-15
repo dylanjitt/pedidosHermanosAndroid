@@ -47,13 +47,13 @@
                 android:layout_marginEnd="15dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="100dp"
                 >
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/pexels_daniel_sperindeo"
+                    android:src="@drawable/logo_sin_fondo"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     />
