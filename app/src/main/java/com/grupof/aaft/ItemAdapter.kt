@@ -10,9 +10,8 @@ import com.grupof.aaft.databinding.MainItemBinding
 
 
 class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
-    private val foodItems = mutableListOf<FoodItem>()
+    private var foodItems = mutableListOf<FoodItem>()
     private var context: Context? = null
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         context = parent.context
@@ -33,6 +32,12 @@ class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
     }
 
     override fun getItemCount(): Int = foodItems.size
+
+    fun setFilteredList(filteredList: MutableList<FoodItem>){
+        this.foodItems = filteredList
+        notifyDataSetChanged()
+
+    }
 
     inner class ItemViewHolder(private val binding: MainItemBinding) :
         RecyclerView.ViewHolder(binding.root) {

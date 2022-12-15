@@ -32,7 +32,7 @@
             android:layout_width="105dp"
             android:layout_height="80dp"
             android:layout_margin="0dp"
-            android:scaleType="centerInside"
+            android:scaleType="centerCrop"
             android:src="@drawable/coca_cola_personal"></ImageView>
     </androidx.cardview.widget.CardView>
 
