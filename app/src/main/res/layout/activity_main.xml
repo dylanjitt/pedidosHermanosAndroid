@@ -19,7 +19,7 @@
 
         <TextView
             android:id="@+id/bienvenido"
-            android:layout_width="310dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="Bienvenido a Pedidos Hermanos"
             android:textSize="32dp"
@@ -120,9 +120,6 @@
             android:padding="10dp"
             ></View>
 
-
-
-
         <Button
             android:visibility="invisible"
             android:id="@+id/ButtonPedir"
@@ -142,7 +139,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_margin="5dp"
-            android:paddingLeft="30dp"
+            android:paddingLeft="20dp"
             app:layout_constraintStart_toStartOf="@id/BottomSection"
             app:layout_constraintBottom_toBottomOf="@id/BottomSection"
             android:text="Total:"

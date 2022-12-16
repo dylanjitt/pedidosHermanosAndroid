@@ -1,16 +1,10 @@
 package com.grupof.aaft
 
-import android.app.DownloadManager.Query
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.SearchView.OnQueryTextListener
-import android.widget.Toast
-import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.grupof.aaft.databinding.ActivityMainBinding
-import com.grupof.aaft.databinding.MainItemBinding
-import java.util.*
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
@@ -29,23 +23,19 @@ class MainActivity : AppCompatActivity() {
 
     var bebidasList = mutableListOf<FoodItem>(
         FoodItem(R.drawable.coca_cola_personal,"Coca Cola Personal", 5,false,0),
-        FoodItem(R.drawable.fanta_personal,"Fanta naranja Personal", 5,false,0),
+        FoodItem(R.drawable.fanta_personal,"Fanta Naranja Personal", 5,false,0),
+        FoodItem(R.drawable.fanta_mandarina_personal,"Fanta Mandarina Personal", 5,false,0),
+        FoodItem(R.drawable.fanta_papaya_personal,"Fanta Papaya Personal", 5,false,0),
+        FoodItem(R.drawable.fanta_guarana_personal,"Fanta Guaraná Personal", 5,false,0),
         FoodItem(R.drawable.sprite_personal,"Sprite Personal", 5,false,0),
-        FoodItem(R.drawable.coca_2lt,"Coca Cola 2 lt",14,false,0)
+        FoodItem(R.drawable.coca_cola_2lt,"Coca Cola 2 lt",14,false,0)
     )
 
     var filteredList = mutableListOf<FoodItem>()
 
-    private lateinit var temporalArrayList: ArrayList<FoodItem>
-
     val FoodList = mutableListOf<FoodItem>()
 
-
-
     private lateinit var binding: ActivityMainBinding
-
-    //private lateinit var searchView: SearchView
-
 
     private val drinkAdapter by lazy { ItemAdapter() }
     private val foodAdapter by lazy { ItemAdapter() }
@@ -59,21 +49,6 @@ class MainActivity : AppCompatActivity() {
         setRecyclerView()
         setSearchWord()
         setDefault()
-
-
-        //searchView = findViewById(R.id.busqueda)
-        //searchView.clearFocus()
-        //searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-
-        ///    override fun onQueryTextChange(newText: String): Boolean{
-        //        filterList(newText)
-        //        return true
-        //    }
-        //    override fun onQueryTextSubmit(query: String): Boolean{
-        //        return false
-        //    }
-
-        //})
 
     }
 
@@ -153,7 +128,7 @@ class MainActivity : AppCompatActivity() {
     fun upadteTotal(monto: Int){
                total += monto
         println(total)
-               binding.total.text = "Total: $total"
+               binding.total.text = "Total: $total Bs."
     }
 
     fun downgradeTotal(monto: Int){
