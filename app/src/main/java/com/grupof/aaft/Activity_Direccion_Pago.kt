@@ -1,5 +1,6 @@
 package com.grupof.aaft
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,8 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.grupof.aaft.databinding.ActivityDireccionPagoBinding
 
 class Activity_Direccion_Pago : AppCompatActivity() {
-
-    private var parentLinearLayout: LinearLayout? = null
 
     private lateinit var binding: ActivityDireccionPagoBinding
 
@@ -30,6 +29,9 @@ class Activity_Direccion_Pago : AppCompatActivity() {
         Zonas(6,"Tempbladerani"),
     )
 
+    private lateinit var variableTotal:String
+
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDireccionPagoBinding.inflate(layoutInflater)
@@ -38,11 +40,16 @@ class Activity_Direccion_Pago : AppCompatActivity() {
 
         binding.totalDar.text = intent.getStringExtra(MontoTotal).orEmpty()
 
+        variableTotal = binding.totalDar.text.toString()
+
         binding.zonaRecycler.visibility = View.GONE
         binding.fondoOpcionesZonas.visibility = View.GONE
         iniciarRecyclerView()
 
-        binding.editingZone.setOnClickListener(){
+        actualizarMontoPago()
+
+        binding.selectingZone.setOnClickListener(){
+
             if(binding.zonaRecycler.visibility == View.GONE){
                 binding.zonaRecycler.visibility = View.VISIBLE
                 binding.fondoOpcionesZonas.visibility = View.VISIBLE
@@ -54,7 +61,12 @@ class Activity_Direccion_Pago : AppCompatActivity() {
             }
         }
 
+        binding.selectingZone.addTextChangedListener {
+            actualizarMontoPago()
+        }
+
         binding.pagoDar.addTextChangedListener {
+
             if(!binding.pagoDar.text.isEmpty()){
                 if(binding.pagoDar.text.toString().toInt()>0 &&
                     !binding.pagoDar.text.isEmpty() &&
@@ -64,24 +76,46 @@ class Activity_Direccion_Pago : AppCompatActivity() {
                     binding.cajaDatos.text = "0"
                 }
             }
+
         }
 
         binding.goNext.setOnClickListener{
             if(binding.IntroduccionDatos.text.isEmpty()){
-                Toast.makeText(this, "Direccion no agregada",
-                    Toast.LENGTH_SHORT).show()
-            }else if(binding.pagoDar.text.isEmpty()){
-                Toast.makeText(this, "Cantidad de dinero insuficiente",
-                    Toast.LENGTH_SHORT).show()
-            }else if(binding.pagoDar.text.toString().toInt() <
+                enviarMensaje("Direccion no agregada")
+            }else if(binding.pagoDar.text.isEmpty() || binding.pagoDar.text.toString().toInt() <
                 binding.totalDar.text.toString().toInt()){
-                Toast.makeText(this, "Cantidad de dinero insuficiente",
-                    Toast.LENGTH_SHORT).show()
+                enviarMensaje("Cantidad de dinero insuficiente")
             }else{
                 val cambioAhora = Intent(this,Pedido::class.java)
                 startActivity(cambioAhora)
             }
         }
+    }
+
+    @SuppressLint("SetTextI18n")
+    fun actualizarMontoPago(){
+        val aux:Float = if(binding.selectingZone.text.toString().lowercase() == "miraflores"){
+            0.2F
+        }else if(binding.selectingZone.text.toString().lowercase() == "irpavi"){
+            0.3F
+        }else if(binding.selectingZone.text.toString().lowercase() == "irpavi 2"){
+            0.4F
+        }else if(binding.selectingZone.text.toString().lowercase() == "obrajes"){
+            0.2F
+        }else if(binding.selectingZone.text.toString().lowercase() == "san pedro"){
+            0.4F
+        }else{
+            0.5F
+        }
+
+        binding.totalDar.text = "${(variableTotal.toFloat() + variableTotal.toFloat()*aux).toInt()}"
+
+        enviarMensaje("Cobro total actualizado")
+    }
+
+    fun enviarMensaje(mensaje:String){
+        Toast.makeText(this, mensaje,
+            Toast.LENGTH_SHORT).show()
     }
 
     fun iniciarRecyclerView(){

@@ -85,8 +85,19 @@
             android:textColor="@color/white"
             android:background="@drawable/borde"
             android:hint="Nombre de Calle - Numero de Casa  "
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/chocolate"
         />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:text="Seleccione su sucursal preferida"
+            android:id="@+id/Zona"
+            android:textColor="#FDAF01"
+            android:textStyle="bold"
+            />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -94,7 +105,7 @@
             android:layout_marginTop="15dp"
         >
             <View
-                android:layout_width="match_parent"
+                android:layout_width="380dp"
                 android:layout_height="230dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -107,11 +118,10 @@
                 android:elevation="10dp"
                 />
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="100dp"
                 app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:id="@+id/opcionesSucursales"
                 android:background="@drawable/borde"
@@ -130,33 +140,22 @@
                         android:layout_height="30dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:cardCornerRadius="10dp"
+                        app:cardCornerRadius="0dp"
                         android:backgroundTint="#221919">
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            android:backgroundTint="#221919"
-                            android:id="@+id/selecting_zone"
-                            android:text="Obrajes"
-                            android:textStyle="bold"
-                            android:padding="0dp"
-                            android:textColor="#FDAF01"
-                            />
-<!--                        <TextView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="match_parent"-->
-<!--                            android:background="@color/black"-->
-<!--                            android:textColor="#FDAF01"-->
-<!--                            android:textStyle="bold"-->
-<!--                            android:paddingTop="5dp"-->
-<!--                            android:paddingStart="10dp"-->
-<!--                            android:id="@+id/text_sucursal"-->
-<!--                            android:text="Obrajes"-->
-<!--                            tools:ignore="RtlSymmetry"-->
-<!--                            />-->
                     </androidx.cardview.widget.CardView>
+                    
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:backgroundTint="#221919"
+                        android:id="@+id/selecting_zone"
+                        android:text="Obrajes"
+                        android:textStyle="bold"
+                        android:padding="0dp"
+                        android:textColor="#FDAF01"
+                        />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -171,21 +170,9 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <ImageButton
-                android:id="@+id/editing_zone"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="15dp"
-                android:src="@drawable/editar_dos"
-                android:background="@drawable/borde_final"
-                />
-
             <androidx.cardview.widget.CardView
                 android:layout_width="380dp"
-                android:layout_height="185dp"
+                android:layout_height="160dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -194,8 +181,8 @@
 
                 >
                 <ImageView
-                    android:layout_width="380dp"
-                    android:layout_height="185dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:src="@drawable/modelo"
                     android:scaleType="centerCrop"
                     />
@@ -235,13 +222,13 @@
 
 <!--        pago a dar-->
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/tituloPago"
             app:layout_constraintLeft_toLeftOf="parent"
             android:textColor="#FDAF01"
             android:textStyle="bold"
-            android:text="Pago a dar"
+            android:text="Monto con el que desea pagar"
             android:layout_marginTop="15dp"
             android:layout_marginStart="40dp"
             android:id="@+id/tituloMontoPagar"
@@ -281,7 +268,7 @@
 
 <!--        total a pagar-->
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/tituloPago"
             app:layout_constraintRight_toRightOf="parent"
@@ -289,7 +276,7 @@
             android:textStyle="bold"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="40dp"
-            android:text="Total a pagar"
+            android:text="Monto que debe pagar"
             />
 
         <TextView
@@ -331,7 +318,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
 
             android:layout_marginTop="10dp"
-            android:text="Cambio Esperado"
+            android:text="Cambio que recibirá"
             android:textColor="#FDAF01"
             android:textStyle="bold"
             android:layout_marginStart="40dp"

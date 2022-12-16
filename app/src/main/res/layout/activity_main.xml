@@ -47,11 +47,12 @@
                 android:background="@color/black"
                 android:padding="10dp"
                 android:hint="Busca un producto"
+                android:textColor="@color/white"
                 android:textColorHint="@color/soft_white" />
         </androidx.cardview.widget.CardView>
 
         <ImageButton
-            android:id="@+id/botonBuscar"
+            android:id="@+id/botonSearch"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
@@ -190,6 +191,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/main_item" />
+
+            <TextView
+                android:id="@+id/resultadosBusquedas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:text="Resultados"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/yellow"
+                android:paddingLeft="20dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/busquedas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/main_item"
+                />
 
         </LinearLayout>
 
