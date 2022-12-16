@@ -36,8 +36,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    val FoodList = mutableListOf<MutableList<FoodItem>>(comidaList,bebidasList)
-
     private lateinit var binding: ActivityMainBinding
 
 
