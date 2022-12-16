@@ -10,9 +10,8 @@ import com.grupof.aaft.databinding.MainItemBinding
 
 
 class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
-    private val foodItems = mutableListOf<FoodItem>()
+    private var foodItems = mutableListOf<FoodItem>()
     private var context: Context? = null
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         context = parent.context
@@ -25,7 +24,6 @@ class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
         )
     }
 
-
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.binding(foodItems[position])
         holder.click(foodItems, position)
@@ -33,6 +31,12 @@ class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
     }
 
     override fun getItemCount(): Int = foodItems.size
+
+    fun setFilteredList(filteredList: MutableList<FoodItem>){
+        this.foodItems = filteredList
+        notifyDataSetChanged()
+
+    }
 
     inner class ItemViewHolder(private val binding: MainItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -43,23 +47,17 @@ class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
         }
 
         fun click(data: MutableList<FoodItem>, posicion: Int){
-            //var monto: Int =0
 
             binding.anadirFood.setOnClickListener(){
                 Log.d("click","si")
                 data[posicion].cantidad ++
 
                     data[posicion].isSelected = true
-               // if (data[posicion].isSelected==true){
+
                     binding.menosFood.visibility = View.VISIBLE
                     binding.quantityFood.visibility= View.VISIBLE
                     binding.quantityFood.text = "${data[posicion].cantidad}"
-
-                //monto= data[posicion].cantidad * data[posicion].precio
-                //mainActivity.upadteTotal(monto)
                 (context as MainActivity).upadteTotal( data[posicion].precio)
-               // }
-
             }
 
             binding.menosFood.setOnClickListener(){
@@ -67,11 +65,8 @@ class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
                 (context as MainActivity).downgradeTotal( data[posicion].precio)
                 if (data[posicion].cantidad==0) {
                     data[posicion].isSelected = false
-
                         binding.menosFood.visibility = View.GONE
                         binding.quantityFood.visibility= View.GONE
-                    //(context as MainActivity).upadteTotal(-(data[posicion].cantidad * data[posicion].precio))
-
                 }else{
                     binding.quantityFood.text = "${data[posicion].cantidad}"
                 }
