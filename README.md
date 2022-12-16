@@ -31,4 +31,18 @@ git clone https://github.com/Lutyvr02/progra3aaft.git
 
 <img src="https://user-images.githubusercontent.com/101956531/208017446-86f5384a-88cb-4908-a1ed-15db0863f80e.png" width="400">
 
+* Para finalizar, volvemos a la vista android y vamos a la carpeta y vamos a la parte de gradle scripts donde elegimos y vamos a build.gradle (el azul)
+
+<img src="https://user-images.githubusercontent.com/101956531/208017898-e75b5644-d966-476d-9ea2-5bd8df465ec6.png" width="400">
+
+* Presionamos ese gradle y vamos a una seccion especial, donde esta la parte del binding, la quitamos, presionamos la parte de sincronizar, volvemos a poner la parte que borramos y volvemos a sincronizar el proyecto.
+<img src="https://user-images.githubusercontent.com/101956531/208018519-bbbdb88c-3c39-4f17-95e8-9e40d6ccb5a8.png" width="400">
+
+<img src="https://user-images.githubusercontent.com/101956531/208018540-40053397-43c4-4363-b473-3ec31267592f.png" width="400">
+
+* Y listo, la aplicacion deberia estar lista para usarse, muchas gracias por atender!
+
+
+
+
 
