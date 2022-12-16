@@ -19,8 +19,16 @@ git clone https://github.com/Lutyvr02/progra3aaft.git
 
 * Ahora, primero debemos ir a la seccion de vista del proyecto y elegimos la vista Proyect, en la cual vamos a la carpeta app:
 
-[google-services-aaft.zip](https://github.com/Lutyvr02/progra3aaft/files/10242462/google-services-aaft.zip)
+<img src="https://user-images.githubusercontent.com/101956531/208017025-5037ea89-c642-42ea-9513-62cfc5262c60.png" width="400">
 
-* Lo descomprimes, despues de eso, deberias poner el archivo que tiene dentro en la carpeta app y deberia quedar asi: 
+<img src="https://user-images.githubusercontent.com/101956531/208017030-f2a01621-950c-4590-be86-531eb2e1aa11.png" width="400">
+
+* Ahora, debe descargar el siguiente comprimido:
+
+[Descargame](https://github.com/Lutyvr02/progra3aaft/files/10242462/google-services-aaft.zip)
+
+* Lo descomprimes, despues de eso, deberias poner el archivo que tiene dentro en la carpeta app anteriormente vista y deberia quedar asi: 
+
+<img src="https://user-images.githubusercontent.com/101956531/208017446-86f5384a-88cb-4908-a1ed-15db0863f80e.png" width="400">
 
 
