@@ -18,76 +18,31 @@
         app:layout_constraintRight_toRightOf="parent">
     </ImageView>
 
-    <TextView
-        android:id="@+id/text_id"
+    <RatingBar
+        android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_id_ty"
+        android:progressTint="@color/teal_200"
+        android:progressBackgroundTint="@color/yellow"/>
+
+    <Button
+        android:id="@+id/text_id_cali"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
         android:layout_marginTop="10dp"
         android:textColor="#DCB933"
         android:gravity="center"
         android:textStyle="bold"
-        android:text="Se envio el pedido de manera exitosa!!"
-        app:layout_constraintTop_toBottomOf="@+id/good_id"
+        android:backgroundTint="@color/brown"
+        android:text="Califica nuestro servicio!"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
-    </TextView>
-
-    <ImageButton
-        android:id="@+id/star3"
-        android:scaleType="centerInside"
-        android:background="@color/black"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        app:layout_constraintTop_toBottomOf="@+id/text_id"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:src="@drawable/star_view"
-        app:layout_constraintRight_toRightOf="parent">
-    </ImageButton>
-
-    <ImageButton
-        android:id="@+id/star1"
-        android:scaleType="centerInside"
-        android:background="@color/black"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        app:layout_constraintTop_toBottomOf="@+id/text_id"
-        app:layout_constraintRight_toLeftOf="@id/star2"
-        android:src="@drawable/star_view">
-    </ImageButton>
-
-    <ImageButton
-        android:id="@+id/star2"
-        android:scaleType="centerInside"
-        android:background="@color/black"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        app:layout_constraintTop_toBottomOf="@+id/text_id"
-        app:layout_constraintRight_toLeftOf="@id/star3"
-        android:src="@drawable/star_view">
-    </ImageButton>
-
-    <ImageButton
-        android:id="@+id/star4"
-        android:scaleType="centerInside"
-        android:background="@color/black"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        app:layout_constraintTop_toBottomOf="@+id/text_id"
-        app:layout_constraintLeft_toRightOf="@id/star3"
-        android:src="@drawable/star_view">
-    </ImageButton>
-
-    <ImageButton
-        android:id="@+id/star5"
-        android:scaleType="centerInside"
-        android:background="@color/black"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        app:layout_constraintTop_toBottomOf="@+id/text_id"
-        app:layout_constraintLeft_toRightOf="@id/star4"
-        android:src="@drawable/star_view">
-    </ImageButton>
+    </Button>
 
     <TextView
         android:id="@+id/text_id_ty"
@@ -98,9 +53,9 @@
         android:textColor="#E3A435"
         android:gravity="center"
         android:textStyle="bold"
-        android:text="Cuantas estrellas le pone a nuestro servicio?"
+        android:text="Su pedido ya llego!"
         android:padding="3sp"
-        app:layout_constraintTop_toBottomOf="@+id/star3"
+        app:layout_constraintTop_toBottomOf="@+id/good_id"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
     </TextView>
@@ -116,7 +71,7 @@
         android:textStyle="bold"
         android:text="Gracias por confiar en pedidos hermanos."
         android:padding="3sp"
-        app:layout_constraintTop_toBottomOf="@+id/text_id_ty"
+        app:layout_constraintTop_toBottomOf="@+id/text_id_cali"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
     </TextView>
@@ -164,6 +119,7 @@
         android:text="No"
         android:backgroundTint="#DCB933">
     </Button>
+
 
 
 
