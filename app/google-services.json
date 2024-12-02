@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1017832029995",
+    "project_id": "pedidoshermanosandroid",
+    "storage_bucket": "pedidoshermanosandroid.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017832029995:android:219b6990a04c2988bf0f6e",
+        "android_client_info": {
+          "package_name": "com.grupof.aaft"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDefkBCDSkIA-jKxbJ6WTc-CMdnDlMQ5RQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
